@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ Html.RenderAction("Slide", "Home");}
+<script src="~/Content/Client/js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+            auto: true,
+            pager: true,
+            nav: false,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+<h2 style="margin: 10px;">Dịch vụ</h2>
+@*@{Html.RenderAction("GetHotProduct", "Product");}*@
+<div class="shoes">
+    <h2 style="margin: 10px;">Sản phẩm phổ biến</h2>
+    <div class="container">
+        <div class="product-one">
+            @*@{ Html.RenderAction("GetNormalProduct1", "Product");}*@
+            <div class="clearfix"> </div>
+        </div>
+        <div class="product-one">
+            @*@{ Html.RenderAction("GetNormalProduct2", "Product");}*@
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<h2 style="margin: 10px;">Sản phẩm mới nhất</h2>
+<div class="abt-shoe">
+    <div class="container">
+        <div class="abt-shoe-main">
+            @*@{Html.RenderAction("GetNewProduct", "Product");}*@
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
