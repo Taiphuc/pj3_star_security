@@ -25,13 +25,11 @@
 
     });
 </script>
-<h2 style="margin: 10px;">Dịch vụ</h2>
-@*@{Html.RenderAction("GetHotProduct", "Product");}*@
 <div class="shoes">
-    <h2 style="margin: 10px;">Sản phẩm phổ biến</h2>
+    <h2 style="margin: 10px;">Dịch vụ</h2>
     <div class="container">
         <div class="product-one">
-            @*@{ Html.RenderAction("GetNormalProduct1", "Product");}*@
+            @{Html.RenderAction("GetBusiness", "Businesses");}
             <div class="clearfix"> </div>
         </div>
         <div class="product-one">
