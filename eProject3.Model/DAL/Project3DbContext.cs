@@ -21,7 +21,6 @@ namespace eProject3.Model.DAL
         public virtual DbSet<Footer> Footer { get; set; }
         public virtual DbSet<Menu> Menu { get; set; }
         public virtual DbSet<Order> Order { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetail { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Slide> Slide { get; set; }
         public virtual DbSet<User> User { get; set; }
@@ -52,17 +51,8 @@ namespace eProject3.Model.DAL
                 .IsUnicode(false);
 
             modelBuilder.Entity<Order>()
-                .Property(e => e.ShipEmail)
+                .Property(e => e.Email)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .HasMany(e => e.OrderDetail)
-                .WithRequired(e => e.Order)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<OrderDetail>()
-                .Property(e => e.Price)
-                .HasPrecision(18, 0);
 
             modelBuilder.Entity<Role>()
                 .Property(e => e.Id)

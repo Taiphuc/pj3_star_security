@@ -75,42 +75,6 @@
         </div>
     }
 
-
-    <!--Quản lý sản phẩm-->
-    <h6 class="alert alert-info text-center"><i class="far fa-newspaper"></i> Quản lý sản phẩm</h6>
-    <div class="row col-md-12">
-        <a href="/Admin/Products" class="col-xl-3 col-md-6 mb-4 text-decoration-none">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-4">
-                            <div class="text-sm font-weight-bold text-primary">Sản phẩm</div>
-                            <div class="text-sm font-weight-bold text-primary">@ViewBag.CountProduct</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fab fa-product-hunt fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="/Admin/ProductCategories" class="col-xl-3 col-md-6 mb-4 text-decoration-none">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-4">
-                            <div class="text-sm font-weight-bold text-success">Nhóm sản phẩm</div>
-                            <div class="text-sm font-weight-bold text-success">@ViewBag.CountProductCategory</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-stream fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-
     <!--Quản lý chuyên mục bài viết-->
     <h6 class="alert alert-warning text-center"><i class="far fa-newspaper"></i> Quản lý bài viết</h6>
     <div class="row col-md-12">
@@ -149,7 +113,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-4">
-                            <div class="text-sm font-weight-bold text-info ">Giới thiệu cửa hàng</div>
+                            <div class="text-sm font-weight-bold text-info ">Giới thiệu sản phẩm</div>
                             <div class="text-sm font-weight-bold text-info ">@ViewBag.CountAbout</div>
                         </div>
                         <div class="col-auto">
@@ -201,7 +165,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-4">
-                                <div class="text-sm font-weight-bold text-info ">Thông tin cửa hàng</div>
+                                <div class="text-sm font-weight-bold text-info ">Thông tin chi nhánh</div>
                                 <div class="text-sm font-weight-bold text-info ">@ViewBag.CountContact</div>
                             </div>
                             <div class="col-auto">
@@ -259,21 +223,6 @@
                         <div class="col mr-4">
                             <div class="text-sm font-weight-bold text-primary">Doanh thu</div>
                             <div class="text-sm font-weight-bold text-primary">@ViewBag.Reven</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fa fa-list-alt fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="/Admin/Orders" class="col-xl-3 col-md-6 mb-4 text-decoration-none">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-4">
-                            <div class="text-sm font-weight-bold text-primary">Lợi nhuận</div>
-                            <div class="text-sm font-weight-bold text-primary">@ViewBag.Benefit</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa fa-list-alt fa-2x text-gray-300"></i>

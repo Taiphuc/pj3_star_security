@@ -35,21 +35,15 @@ namespace eProject3
             );
 
             routes.MapRoute(
-                name: "Register",
-                url: "dang-ky",
-                defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
                 name: "About Shop",
                 url: "gioi-thieu",
                 defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "Product Detail",
-                url: "Product/Detail/{metatitle}/{id}",
-                defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional }
+                name: "Business Detail",
+                url: "Businesses/Detail/{id}",
+                defaults: new { controller = "Businesses", action = "Detail", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

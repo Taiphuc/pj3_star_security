@@ -40,6 +40,9 @@
                         <th>
                             Email
                         </th>
+                        <th>
+                            Giá
+                        </th>
                         <th style="width: 150px;">
                             Ngày đặt hàng
                             <a href="/Admin/Orders?sortOrder=@ViewBag.CreatedOnSortParm&searchString=@ViewBag.SearchString"><i class="fas fa-sort text-dark"></i></a>
@@ -53,33 +56,36 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td class="text-center">
-                                @i
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShipName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShipPhone)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShipAddress)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShipEmail)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CreatedOn)
-                            </td>
-                            <td>
-                                <a href="#" class="btn-active btn btn-primary btn-sm" data-id="@item.Id">@(item.Status ? "Đã xác nhận" : "Chưa xác nhận")</a>
-                            </td>
-                            <td class="text-center" style="width: 80px;">
-                                <a class="btn-sm btn-group-sm btn-secondary dialog-link" href="@Url.Action("Details", new { id = item.Id })"><i class="fas fa-info"></i></a>
-                                <a class="btn-sm btn-group-sm btn-danger dialog-link" href="@Url.Action("Delete", new { id = item.Id })"><i class="far fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td class="text-center">
+                            @i
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedOn)
+                        </td>
+                        <td>
+                            <a href="#" class="btn-active btn btn-primary btn-sm" data-id="@item.Id">@(item.Status ? "Đã xác nhận" : "Chưa xác nhận")</a>
+                        </td>
+                        <td class="text-center" style="width: 80px;">
+                            <a class="btn-sm btn-group-sm btn-secondary dialog-link" href="@Url.Action("Details", new { id = item.Id })"><i class="fas fa-info"></i></a>
+                            <a class="btn-sm btn-group-sm btn-danger dialog-link" href="@Url.Action("Delete", new { id = item.Id })"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
                         i++;
                     }
                 </tbody>

@@ -92,6 +92,7 @@ namespace eProject3.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
+                var check = Encryptor.MD5Hash(model.Password);
                 var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.Password), false);
                 if (result == 1)
                 {

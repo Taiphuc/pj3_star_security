@@ -17,7 +17,6 @@ namespace eProject3.Areas.Admin.Controllers
         public ActionResult Index(string sortOrder, string currentFilter, int? page, string search)
         {
             CountMessage();
-            //CountProduct();
             CountOrder();
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -37,13 +36,13 @@ namespace eProject3.Areas.Admin.Controllers
 
             if (!String.IsNullOrEmpty(search))
             {
-                orders = orders.Where(s => s.ShipName.Contains(search) || s.ShipPhone.Contains(search) || s.ShipEmail.Contains(search) || s.ShipAddress.Contains(search));
+                orders = orders.Where(s => s.UserName.Contains(search) || s.Phone.Contains(search) || s.Email.Contains(search) || s.Address.Contains(search));
             }
             //Sort
             switch (sortOrder)
             {
                 case "name_desc":
-                    orders = orders.OrderByDescending(s => s.ShipName);
+                    orders = orders.OrderByDescending(s => s.UserName);
                     break;
                 case "CreatedOn":
                     orders = orders.OrderBy(s => s.CreatedOn);
@@ -52,7 +51,7 @@ namespace eProject3.Areas.Admin.Controllers
                     orders = orders.OrderByDescending(s => s.CreatedOn);
                     break;
                 default:
-                    orders = orders.OrderBy(s => s.ShipName);
+                    orders = orders.OrderBy(s => s.UserName);
                     break;
             }
             int pageSize = 10;
@@ -64,7 +63,6 @@ namespace eProject3.Areas.Admin.Controllers
         public ActionResult CancelOrder(string sortOrder, int? page, string searchString, string currentFilter)
         {
             CountMessage();
-            //CountProduct();
             CountOrder();
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -85,13 +83,13 @@ namespace eProject3.Areas.Admin.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                orders = orders.Where(s => s.ShipName.Contains(searchString) || s.ShipPhone.Contains(searchString) || s.ShipEmail.Contains(searchString) || s.ShipAddress.Contains(searchString));
+                orders = orders.Where(s => s.UserName.Contains(searchString) || s.Phone.Contains(searchString) || s.Email.Contains(searchString) || s.Address.Contains(searchString));
             }
             //Sort
             switch (sortOrder)
             {
                 case "name_desc":
-                    orders = orders.OrderByDescending(s => s.ShipName);
+                    orders = orders.OrderByDescending(s => s.UserName);
                     break;
                 case "CreatedOn":
                     orders = orders.OrderBy(s => s.CreatedOn);
@@ -100,7 +98,7 @@ namespace eProject3.Areas.Admin.Controllers
                     orders = orders.OrderByDescending(s => s.CreatedOn);
                     break;
                 default:
-                    orders = orders.OrderBy(s => s.ShipName);
+                    orders = orders.OrderBy(s => s.UserName);
                     break;
             }
             int pageSize = 10;
@@ -115,13 +113,12 @@ namespace eProject3.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OrderDetail orderDetail = new OrderDetail();
             Order order = db.Order.Find(id);
             if (order == null)
             {
                 return HttpNotFound();
             }
-            return View(db.OrderDetail.Where(x => x.OrderId == order.Id).ToList());
+            return View(order);
         }
 
         public ActionResult Delete(Guid? id)

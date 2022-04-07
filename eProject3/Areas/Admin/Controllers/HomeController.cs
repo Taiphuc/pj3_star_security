@@ -25,8 +25,6 @@ namespace eProject3.Areas.Admin.Controllers
             ViewBag.CountUser = db.User.Count();
             ViewBag.CountRole = db.Role.Count();
             ViewBag.CountCredential = db.Credentials.Count();
-            //ViewBag.CountProduct = db.Product.Count();
-            //ViewBag.CountProductCategory = db.ProductCategory.Count();
             ViewBag.CountNews = db.News.Count();
             ViewBag.CountNewsCategory = db.NewsCategory.Count();
             ViewBag.CountAbout = db.About.Count();
@@ -35,20 +33,7 @@ namespace eProject3.Areas.Admin.Controllers
             ViewBag.CountContact = db.Contact.Count();
             ViewBag.CountFooter = db.Footer.Count();
             ViewBag.CountOrder = db.Order.Count();
-            ViewBag.Reven = db.OrderDetail.Sum(i => i.Price * i.Quantity);
-            // tinh tong tien ban
-            //var result = from o in db.OrderDetail
-            //             join p in db.Product on o.ProductId equals p.Id
-            //             select new
-            //             {
-            //                 Code = p.Code,
-            //                 Price = o.Price,
-            //                 Quantity = o.Quantity,
-            //                 ProductId = p.Id
-            //             };
-            //var sumPrice = result.Sum(x => x.Quantity * x.Price);
-            //var sum = result.Sum(x => x.Quantity * x.Code);
-            //ViewBag.Benefit = sumPrice - sum;
+            ViewBag.Reven = db.Order.Sum(i => i.Price);
             return View();
         }
 
