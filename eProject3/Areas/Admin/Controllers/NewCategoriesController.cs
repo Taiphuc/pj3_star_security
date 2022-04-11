@@ -18,7 +18,6 @@ namespace eProject3.Areas.Admin.Controllers
         public ActionResult Index()
         {
             CountMessage();
-            //CountProduct();
             CountOrder();
             return View(db.NewsCategory.Where(x => x.IsDeleted == false).OrderByDescending(x => x.CreatedOn).ToList());
         }
@@ -27,7 +26,6 @@ namespace eProject3.Areas.Admin.Controllers
         {
             CountMessage();
             CountOrder();
-            //CountProduct();
             return View();
         }
 
@@ -68,7 +66,6 @@ namespace eProject3.Areas.Admin.Controllers
         {
             CountMessage();
             CountOrder();
-            //CountProduct();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

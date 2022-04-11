@@ -112,7 +112,6 @@ namespace eProject3.Areas.Admin.Controllers
         public ActionResult Edit(Guid? id)
         {
             CountMessage();
-            //CountProduct();
             CountOrder();
             if (id == null)
             {

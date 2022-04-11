@@ -20,7 +20,6 @@ namespace eProject3.Areas.Admin.Controllers
         {
             CountMessage();
             CountOrder();
-            //CountProduct();
             ViewBag.CountUserGroup = db.UserGroup.Count();
             ViewBag.CountUser = db.User.Count();
             ViewBag.CountRole = db.Role.Count();
@@ -33,6 +32,8 @@ namespace eProject3.Areas.Admin.Controllers
             ViewBag.CountContact = db.Contact.Count();
             ViewBag.CountFooter = db.Footer.Count();
             ViewBag.CountOrder = db.Order.Count();
+            ViewBag.CountCareer = db.Career.Count();
+            ViewBag.CountBusiness = db.Business.Count();
             ViewBag.Reven = db.Order.Sum(i => i.Price);
             return View();
         }

@@ -40,5 +40,7 @@ namespace eProject3.Model.DAL
 
         [Display(Name = "Trạng thái")]
         public bool IsDeleted { get; set; }
+        public Guid? BusinessId { get; set; }
+        public virtual Business Business { get; set; }
     }
 }

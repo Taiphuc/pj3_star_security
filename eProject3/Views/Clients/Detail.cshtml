@@ -1,0 +1,86 @@
+﻿@model eProject3.Model.DAL.Client
+
+@{
+    ViewBag.Title = "Chi tiết khách hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .imageDetail {
+        transition: all .4s ease-in-out;
+    }
+
+        .imageDetail:hover {
+            transform: scale(1.4);
+        }
+</style>
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="/Home">Trang chủ</a></li>
+                <li class="active">@ViewBag.Title</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--end-breadcrumbs-->
+<!--start-single-->
+<div class="single contact">
+    <div class="container">
+        <div class="single-main">
+            <div class="col-md-9 single-main-left">
+                <div class="sngl-top">
+                    <div class="col-md-5 single-top-left">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li data-thumb="images/s1.jpg">
+                                    <img src="@Model.UrlImage" class="imageDetail" />
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- FlexSlider -->
+                        <script defer src="~/Content/Client/js/jquery.flexslider.js"></script>
+                        <link rel="stylesheet" href="~/Content/Client/css/flexslider.css" type="text/css" media="screen" />
+
+                        <script>
+                            // Can also be used with $(document).ready()
+                            $(window).load(function () {
+                                $('.flexslider').flexslider({
+                                    animation: "slide",
+                                    controlNav: "thumbnails"
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="col-md-7 single-top-right">
+                        <div class="details-left-info simpleCart_shelfItem">
+                            <h3>@Model.Name</h3>
+                            <h2 class="quick">Mô tả:</h2>
+                            <p class="quick_desc">@Html.Raw(Model.Email)</p>
+                            <p class="quick_desc">@Html.Raw(Model.Address)</p>
+                            <p class="quick_desc">@Html.Raw(Model.Phone)</p>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="latest products">
+                    <div class="product-one">
+                        @*@{ Html.RenderAction("GetInvolve", "Businesses");}*@
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 single-right">
+                <h3>Thương hiệu</h3>
+                <ul class="product-categories">
+                    @*@{ Html.RenderAction("GetAllCategory", "Product");}*@
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+

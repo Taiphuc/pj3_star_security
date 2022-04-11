@@ -26,14 +26,23 @@
     });
 </script>
 <div class="shoes">
-    <h2 style="margin: 10px;">Dịch vụ</h2>
+    <h2 style="margin: 10px;">Dịch vụ và việc làm</h2>
     <div class="container">
         <div class="product-one">
             @{Html.RenderAction("GetBusiness", "Businesses");}
             <div class="clearfix"> </div>
         </div>
         <div class="product-one">
-            @*@{ Html.RenderAction("GetNormalProduct2", "Product");}*@
+            @{Html.RenderAction("Index", "Careers");}
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<h2 style="margin: 10px;">Khách hàng tiêu biểu</h2>
+<div class="abt-shoe">
+    <div class="container">
+        <div class="abt-shoe-main">
+            @{Html.RenderAction("Index", "Clients");}
             <div class="clearfix"> </div>
         </div>
     </div>

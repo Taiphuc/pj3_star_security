@@ -194,7 +194,7 @@
     }
 
     <!--Quản lý đơn đặt hàng-->
-    <h6 class="alert alert-secondary text-center"><i class="fas fa-bars"></i> Quản lý đơn hàng</h6>
+    <h6 class="alert alert-secondary text-center"><i class="fas fa-bars"></i> Quản lý đơn hàng và khách hàng</h6>
     <div class="row col-md-12">
         <a href="/Admin/Orders" class="col-xl-3 col-md-6 mb-4 text-decoration-none">
             <div class="card border-left-primary shadow h-100 py-2">
@@ -211,10 +211,60 @@
                 </div>
             </div>
         </a>
+        <a href="/Admin/Clients" class="col-xl-3 col-md-6 mb-4 text-decoration-none">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-4">
+                            <div class="text-sm font-weight-bold text-primary">Khách hàng</div>
+                            <div class="text-sm font-weight-bold text-primary">@ViewBag.CountOrder</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa fa-list-alt fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!--Dịch vụ-->
+    <h6 class="alert alert-secondary text-center"><i class="fas fa-bars"></i> Quản lý dịch vụ</h6>
+    <div class="row col-md-12">
+        <a href="/Admin/Businesses" class="col-xl-3 col-md-6 mb-4 text-decoration-none">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-4">
+                            <div class="text-sm font-weight-bold text-primary">Dịch vụ</div>
+                            <div class="text-sm font-weight-bold text-primary">@ViewBag.CountBusiness</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa fa-list-alt fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/Admin/Careers" class="col-xl-3 col-md-6 mb-4 text-decoration-none">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-4">
+                            <div class="text-sm font-weight-bold text-primary">Nghề nghiệp</div>
+                            <div class="text-sm font-weight-bold text-primary">@ViewBag.CountCareer</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa fa-list-alt fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
     </div>
 
     <!--Doanh thu-->
-    <h6 class="alert alert-secondary text-center"><i class="fas fa-bars"></i> Quản lý đơn hàng</h6>
+    <h6 class="alert alert-secondary text-center"><i class="fas fa-bars"></i> Quản lý doanh thu</h6>
     <div class="row col-md-12">
         <a href="/Admin/Orders" class="col-xl-3 col-md-6 mb-4 text-decoration-none">
             <div class="card border-left-primary shadow h-100 py-2">
@@ -235,9 +285,9 @@
     </div>
     @*// chart*@
     <select>
-        <option value="2021" selected>2021</option>
-        <option value="2019">2022</option>
-        <option value="2020">2023</option>
+        <option value="2022" selected>2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
     </select>
     <figure class="highcharts-figure">
         <div id="container"></div>

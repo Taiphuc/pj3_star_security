@@ -27,6 +27,8 @@ namespace eProject3.Model.DAL
         public virtual DbSet<UserGroup> UserGroup { get; set; }
         public System.Data.Entity.DbSet<eProject3.Model.DAL.Credential> Credentials { get; set; }
         public virtual DbSet<Business> Business { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
+        public virtual DbSet<Career> Career { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
